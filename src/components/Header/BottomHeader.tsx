@@ -9,48 +9,63 @@ import {
 import Container from "@components/layouts/Container";
 import Link from "next/link";
 import { FiSearch } from "react-icons/fi";
+import { navigation } from "./navigation";
 
 export default function BottomHeader() {
   return (
     <>
       <Flex h="78px" align="center">
         <Container>
-          <Flex justify="space-between" w="100%" align="center">
-            <Flex gridGap="88px" align="center">
-              <Heading as="h2" fontFamily="josefin" fontSize="34px">
-                Hekto
-              </Heading>
-              <Flex fontFamily="lato" gridGap="35px">
-                <Link href="/" passHref>
-                  <ChakraLink _hover={{ color: "pink" }}>Home</ChakraLink>
+          <Flex
+            justify="space-between"
+            w="100%"
+            align="center"
+            wrap="wrap"
+            px={{ base: "15px", xl: 0 }}
+            h="100%"
+          >
+            <Heading
+              as="h2"
+              fontFamily="josefin"
+              fontSize="34px"
+              order="1"
+              mt="5px"
+              w={{ base: "40%", lg: "12%" }}
+            >
+              Hekto
+            </Heading>
+            <Flex
+              fontFamily="lato"
+              order={{ base: 3, lg: 2 }}
+              w={{ base: "100%", lg: "50%" }}
+              gridGap="35px"
+              overflowX="scroll"
+              justify={{ base: "space-between", lg: "initial" }}
+            >
+              {navigation.map((page) => (
+                <Link href={page.link} passHref>
+                  <ChakraLink _hover={{ color: "pink" }}>
+                    {page.label}
+                  </ChakraLink>
                 </Link>
-                <Link href="/pages" passHref>
-                  <ChakraLink _hover={{ color: "pink" }}>Pages</ChakraLink>
-                </Link>
-                <Link href="/products" passHref>
-                  <ChakraLink _hover={{ color: "pink" }}>Products</ChakraLink>
-                </Link>
-                <Link href="/blog" passHref>
-                  <ChakraLink _hover={{ color: "pink" }}>Blog</ChakraLink>
-                </Link>
-                <Link href="/shop" passHref>
-                  <ChakraLink _hover={{ color: "pink" }}>Shop</ChakraLink>
-                </Link>
-                <Link href="/contact" passHref>
-                  <ChakraLink _hover={{ color: "pink" }}>Contact</ChakraLink>
-                </Link>
-              </Flex>
+              ))}
             </Flex>
-            <InputGroup w="315px" fontFamily="lato">
+            <InputGroup
+              w={{ base: "60%", lg: "35%" }}
+              fontFamily="lato"
+              order={{ base: 2, lg: 3 }}
+            >
               <InputRightElement
                 bg="pink"
                 children={<FiSearch color="white" />}
                 cursor="pointer"
+                h={{ base: "30px", lg: "40px" }}
               />
               <Input
-                type="tel"
                 placeholder="Search for a product"
                 borderRadius="0"
+                fontSize={{ base: "xs", lg: "sm" }}
+                h={{ base: "30px", lg: "40px" }}
               />
             </InputGroup>
           </Flex>

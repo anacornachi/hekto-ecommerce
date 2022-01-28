@@ -10,30 +10,67 @@ export default function TopHeader() {
     <>
       <Flex bg="purple" h="44px" align="center">
         <Container>
-          <Flex justify="space-between" w="100%" align="center">
-            <Flex color="white" fontSize="16px" gridGap="48px">
-              <Button variant="nav">
+          <Flex
+            justify="space-between"
+            w="100%"
+            align="center"
+            px={{ base: "15px", xl: 0 }}
+          >
+            <Flex
+              color="white"
+              fontSize="16px"
+              gridGap={{ base: 0, md: "48px" }}
+            >
+              <Button
+                variant="nav"
+                justifyContent={{ base: "inherit", md: "center" }}
+              >
                 <FiMail />
-                <Text mt="1px" ml={2} lineHeight="initial">
+                <Text
+                  mt="1px"
+                  ml={2}
+                  lineHeight="initial"
+                  d={{ base: "none", md: "block" }}
+                >
                   mhhasanul@gmail.com
                 </Text>
               </Button>
               <Button variant="nav">
                 <FiPhoneCall />
-                <Text mt="1px" ml={2} lineHeight="initial">
+                <Text
+                  mt="1px"
+                  ml={2}
+                  lineHeight="initial"
+                  d={{ base: "none", md: "block" }}
+                >
                   (12345)67890
                 </Text>
               </Button>
             </Flex>
-            <Flex color="white" fontSize="16px" gridGap="48px" align="center">
+            <Flex
+              color="white"
+              fontSize="16px"
+              align="center"
+              gridGap={{ base: "10px", md: "48px" }}
+            >
               <Button variant="nav">
-                <Text mt="1px" mr={2} lineHeight="initial">
+                <Text
+                  mt="1px"
+                  mr={2}
+                  lineHeight="initial"
+                  d={{ base: "none", md: "block" }}
+                >
                   Login
                 </Text>
                 <BiUser />
               </Button>
               <Button variant="nav">
-                <Text mt="1px" mr={2} lineHeight="initial">
+                <Text
+                  mt="1px"
+                  mr={2}
+                  lineHeight="initial"
+                  d={{ base: "none", md: "block" }}
+                >
                   Wishlist
                 </Text>
                 <FiHeart />
