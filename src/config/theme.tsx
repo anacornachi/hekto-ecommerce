@@ -27,6 +27,9 @@ const theme = extendTheme({
           h: "fit-content",
           d: "flex",
           alignItems: "center",
+          _focus: {
+            boxShadow: "none",
+          },
         },
       },
     },
