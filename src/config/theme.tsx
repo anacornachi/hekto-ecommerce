@@ -7,7 +7,7 @@ const theme = extendTheme({
     blue: "#2F1AC4",
     offNavyBlue: "#3F509E",
     navyBlue: "#151875",
-    pantonePurple: "#E0D3F5",
+    pantonePurple: "#f6f5ff",
     purple: "#7E33E0",
     offPurple: "#9F63B5",
     offBlue: "#151875",

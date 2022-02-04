@@ -1,11 +1,12 @@
 import { Flex, Button, Text, Circle } from "@chakra-ui/react";
 import Container from "@components/layouts/Container";
-
 import { FiMail, FiPhoneCall, FiHeart } from "react-icons/fi";
 import { BiUser } from "react-icons/bi";
 import { BsCart2 } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 export default function TopHeader() {
+  const router = useRouter();
   return (
     <>
       <Flex bg="purple" h="44px" align="center">
@@ -53,7 +54,7 @@ export default function TopHeader() {
               align="center"
               gridGap={{ base: "10px", md: "48px" }}
             >
-              <Button variant="nav">
+              <Button variant="nav" onClick={() => router.push("/login")}>
                 <Text
                   mt="1px"
                   mr={2}
