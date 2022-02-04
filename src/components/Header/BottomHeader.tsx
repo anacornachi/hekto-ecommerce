@@ -60,10 +60,12 @@ export default function BottomHeader() {
             >
               <InputRightElement
                 bg="pink"
-                children={<FiSearch color="white" />}
+                color="white"
                 cursor="pointer"
                 h={{base: '30px', lg: '40px'}}
-              />
+              >
+                <FiSearch />
+              </InputRightElement>
               <Input
                 placeholder="Search for a product"
                 borderRadius="0"

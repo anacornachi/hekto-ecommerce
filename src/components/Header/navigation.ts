@@ -1,22 +1,22 @@
 export const navigation = [
   {
-    link: "/",
-    label: "Home",
+    link: '/',
+    label: 'Home',
   },
   {
-    link: "/products",
-    label: "Products",
+    link: '/products',
+    label: 'Products',
   },
   {
-    link: "/blog",
-    label: "Blog",
+    link: '/blog',
+    label: 'Blog',
   },
   {
-    link: "/shop",
-    label: "Shop",
+    link: '/shop',
+    label: 'Shop',
   },
   {
-    link: "/contact",
-    label: "Contact",
+    link: '/contact',
+    label: 'Contact',
   },
 ];
