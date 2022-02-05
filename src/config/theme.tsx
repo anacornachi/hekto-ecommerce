@@ -12,6 +12,7 @@ const theme = extendTheme({
     offPurple: '#9F63B5',
     offBlue: '#151875',
     skyBlue: 'linear-gradient(121.53deg, #F3F9FF 0%, #F1F0FF 100%)',
+    lightPurple: '#E7E4F8'
   },
   fonts: {
     josefin: "'Josefin Sans', sans-serif",
