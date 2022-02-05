@@ -50,7 +50,10 @@ export default function TopHeader() {
               align="center"
               gridGap={{base: '10px', md: '48px'}}
             >
-              <Button variant="nav" onClick={() => router.push('/login')}>
+              <Button
+                variant="nav"
+                onClick={() => router.push('/account/login')}
+              >
                 <Text
                   mt="1px"
                   mr={2}
