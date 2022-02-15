@@ -34,6 +34,19 @@ const theme = extendTheme({
         },
       },
     },
+    Input: {
+      variants: {
+        outlineInput: {
+          field: {
+            size: 'lg',
+            border: '1px',
+            borderStyle: 'solid',
+            borderColor: '#C2C5E1',
+            borderRadius: '3px',
+          },
+        },
+      },
+    },
   },
 });
 export default theme;
