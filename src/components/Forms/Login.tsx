@@ -8,7 +8,6 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import Link from 'next/link';
-
 import {FormProvider, useForm} from 'react-hook-form';
 import {loginResolver} from '@components/Forms/loginResolver';
 import CustomInput from './CustomInput';
@@ -60,6 +59,7 @@ export default function Login() {
           justify="center"
           p={{base: '10px', md: '50px'}}
           boxShadow="xl"
+          as="form"
           onSubmit={methods.handleSubmit(onSubmit, onError)}
         >
           <Heading fontSize="32px" fontFamily="josefin">
@@ -77,37 +77,39 @@ export default function Login() {
               name="email"
               type="email"
               placeholder="Email Address"
+              id="email"
             />
             <CustomInput
               name="password"
               type="password"
               placeholder="Password"
               mt="20px"
+              id="password"
             />
-          </FormProvider>
-          <Link href="/account/recover" passHref>
-            <ChakraLink
-              _hover={{color: 'pink'}}
-              _focus={{boxShadow: 'none'}}
-              color="description"
-              alignSelf="start"
-              mt="13px"
+            <Link href="/account/recover" passHref>
+              <ChakraLink
+                _hover={{color: 'pink'}}
+                _focus={{boxShadow: 'none'}}
+                color="description"
+                alignSelf="start"
+                mt="13px"
+              >
+                Forgot your password?
+              </ChakraLink>
+            </Link>
+            <Button
+              w="100%"
+              mt={{base: '30px', md: '23px'}}
+              color="white"
+              bg="pink"
+              _hover={{background: 'pink'}}
+              borderRadius="3px"
+              h={{base: '50px', md: '47px'}}
+              type="submit"
             >
-              Forgot your password?
-            </ChakraLink>
-          </Link>
-          <Button
-            w="100%"
-            mt={{base: '30px', md: '23px'}}
-            color="white"
-            bg="pink"
-            _hover={{background: 'pink'}}
-            borderRadius="3px"
-            h={{base: '50px', md: '47px'}}
-            type="submit"
-          >
-            Sign In
-          </Button>
+              Sign In
+            </Button>
+          </FormProvider>
           <Link href="/account/create" passHref>
             <ChakraLink
               _hover={{color: 'pink'}}

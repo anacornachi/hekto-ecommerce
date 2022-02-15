@@ -4,7 +4,7 @@ import theme from '../config/theme';
 import Header from '@components/Header';
 
 function MyApp({Component}) {
-  console.log(theme.components);
+  // console.log(theme.components);
 
   return (
     <ChakraProvider resetCSS theme={theme}>
