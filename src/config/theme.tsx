@@ -12,6 +12,7 @@ const theme = extendTheme({
     offPurple: '#9F63B5',
     offBlue: '#151875',
     skyBlue: 'linear-gradient(121.53deg, #F3F9FF 0%, #F1F0FF 100%)',
+    description: '#9096B2',
   },
   fonts: {
     josefin: "'Josefin Sans', sans-serif",
@@ -29,6 +30,19 @@ const theme = extendTheme({
           alignItems: 'center',
           _focus: {
             boxShadow: 'none',
+          },
+        },
+      },
+    },
+    Input: {
+      variants: {
+        outlineInput: {
+          field: {
+            size: 'lg',
+            border: '1px',
+            borderStyle: 'solid',
+            borderColor: '#C2C5E1',
+            borderRadius: '3px',
           },
         },
       },
