@@ -5,7 +5,6 @@ import {
   InputGroup,
   InputProps,
 } from '@chakra-ui/react';
-import React, {useState} from 'react';
 import {useFormContext} from 'react-hook-form';
 
 export type Props = {
@@ -20,9 +19,9 @@ export default function CustomInput({
   variant,
   ...props
 }: Props) {
-  const {formState, register, setValue, trigger} = useFormContext();
+  const {formState, register} = useFormContext();
 
-  const {errors, dirtyFields} = formState;
+  const {errors} = formState;
   const error = errors[name];
 
   return (
@@ -32,16 +31,6 @@ export default function CustomInput({
           {...props}
           variant={variant ?? 'outlineInput'}
           {...register(name)}
-          onChangeCapture={async () => {
-            const isValid = await trigger(name);
-            if (!isValid) {
-              await trigger(name);
-            }
-          }}
-          onBlur={(event) => {
-            const {value} = event.target;
-            setValue(name, value);
-          }}
         />
       </InputGroup>
       <FormErrorMessage

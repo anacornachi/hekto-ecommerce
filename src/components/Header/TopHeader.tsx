@@ -11,12 +11,7 @@ export default function TopHeader() {
     <>
       <Flex bg="purple" h="44px" align="center">
         <Container>
-          <Flex
-            justify="space-between"
-            w="100%"
-            align="center"
-            px={{base: '15px', xl: 0}}
-          >
+          <Flex justify="space-between" w="100%" align="center">
             <Flex color="white" fontSize="16px" gridGap={{base: 0, md: '48px'}}>
               <Button
                 variant="nav"

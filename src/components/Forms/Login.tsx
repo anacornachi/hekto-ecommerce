@@ -6,7 +6,6 @@ import {
   Link as ChakraLink,
   useToast,
 } from '@chakra-ui/react';
-import React from 'react';
 import Link from 'next/link';
 import {FormProvider, useForm} from 'react-hook-form';
 import {loginResolver} from '@components/Forms/loginResolver';
