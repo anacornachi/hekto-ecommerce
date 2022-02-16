@@ -21,7 +21,6 @@ export default function BottomHeader() {
             w="100%"
             align="center"
             wrap="wrap"
-            px={{base: '15px', xl: 0}}
             h="100%"
           >
             <Heading

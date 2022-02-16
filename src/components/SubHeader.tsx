@@ -21,12 +21,7 @@ export default function SubHeader({title}: Props) {
     <>
       <Box bg="pantonePurple" h={{base: '150px', lg: '286px'}}>
         <Container h="100%">
-          <Flex
-            h="100%"
-            justify="center"
-            direction="column"
-            p={{base: '15px', xl: 0}}
-          >
+          <Flex h="100%" justify="center" direction="column">
             <Heading
               as="h1"
               fontFamily="josefin"

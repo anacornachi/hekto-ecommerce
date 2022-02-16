@@ -8,7 +8,7 @@ export type ContainerProps = {
 export default function Container(props: ContainerProps) {
   return (
     <>
-      <Box {...props} width="100%" maxWidth="1400px" margin="0 auto">
+      <Box {...props} width="100%" maxWidth="1400px" margin="0 auto" px="15px">
         {props.children}
       </Box>
     </>

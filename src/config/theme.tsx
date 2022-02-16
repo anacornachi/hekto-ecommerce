@@ -32,6 +32,21 @@ const theme = extendTheme({
             boxShadow: 'none',
           },
         },
+        primary: {
+          fontFamily: 'josefin',
+          px: '30px',
+          fontSize: '16px',
+          h: '44px',
+          borderRadius: '3px',
+          d: 'flex',
+          alignItems: 'center',
+          bg: 'pink',
+          pt: '3px',
+          color: 'white',
+          _focus: {
+            boxShadow: 'none',
+          },
+        },
       },
     },
     Input: {
