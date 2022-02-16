@@ -8,18 +8,34 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import {FormProvider, useForm} from 'react-hook-form';
-import {loginResolver} from '@components/Forms/resolvers/loginResolver';
+import {signUpResolver} from '@components/Forms/resolvers/signUpResolver';
 import CustomInput from './CustomInput';
 
-export default function Login() {
+const signUpInputs = [
+  {name: 'firstName', type: 'text', placeholder: 'First Name'},
+  {name: 'lastName', type: 'text', placeholder: 'Last Name'},
+  {name: 'email', type: 'email', placeholder: 'Email Address'},
+  {
+    name: 'password',
+    type: 'password',
+    placeholder: 'Password',
+  },
+  {
+    name: 'passwordConfirmation',
+    type: 'password',
+    placeholder: 'Confirm Password',
+  },
+];
+
+export default function SignUp() {
   const toast = useToast();
-  const methods = useForm({resolver: loginResolver, mode: 'onChange'});
+  const methods = useForm({resolver: signUpResolver, mode: 'onChange'});
 
   const onSubmit = async (data: any) => {
     console.log(data);
     toast({
       status: 'success',
-      title: 'Welcome!',
+      title: 'Account created successfully!',
       position: 'bottom-right',
       duration: 4000,
       isClosable: true,
@@ -30,7 +46,7 @@ export default function Login() {
   const onError = () => {
     toast({
       status: 'error',
-      title: 'Invalid name and/or password. Try again!',
+      title: 'Unable to register. Check the info and try again.',
       position: 'bottom-right',
       duration: 4000,
       isClosable: true,
@@ -47,7 +63,7 @@ export default function Login() {
       >
         <Flex
           w={{base: '100%', sm: '544px'}}
-          h="474px"
+          h="650px"
           align="center"
           direction="column"
           justify="center"
@@ -57,40 +73,28 @@ export default function Login() {
           onSubmit={methods.handleSubmit(onSubmit, onError)}
         >
           <Heading fontSize="32px" fontFamily="josefin">
-            Login
+            Sign Up
           </Heading>
           <Text
             color="description"
             mb="37px"
             fontSize={{base: '14px', md: '17px'}}
           >
-            Please login using account detail bellow.
+            Please fill in the blanks to become part of Hekto.
           </Text>
           <FormProvider {...methods}>
-            <CustomInput
-              name="email"
-              type="email"
-              placeholder="Email Address"
-              id="email"
-            />
-            <CustomInput
-              name="password"
-              type="password"
-              placeholder="Password"
-              mt="20px"
-              id="password"
-            />
-            <Link href="/account/recover" passHref>
-              <ChakraLink
-                _hover={{color: 'pink'}}
-                _focus={{boxShadow: 'none'}}
-                color="description"
-                alignSelf="start"
-                mt="13px"
-              >
-                Forgot your password?
-              </ChakraLink>
-            </Link>
+            {signUpInputs &&
+              signUpInputs.map((input, key) => {
+                return (
+                  <CustomInput
+                    name={input.name}
+                    type={input.type}
+                    placeholder={input.placeholder}
+                    key={key}
+                    mt={key === 0 ? 0 : '20px'}
+                  />
+                );
+              })}
             <Button
               w="100%"
               fontFamily="lato"
@@ -99,17 +103,17 @@ export default function Login() {
               variant="primary"
               type="submit"
             >
-              Sign In
+              Sign Up
             </Button>
           </FormProvider>
-          <Link href="/account/sign-up" passHref>
+          <Link href="/account/create" passHref>
             <ChakraLink
               _hover={{color: 'pink'}}
               _focus={{boxShadow: 'none'}}
               color="description"
               mt="28px"
             >
-              Don’t have an Account? Create account!
+              Already have an Account? Sign in!
             </ChakraLink>
           </Link>
         </Flex>

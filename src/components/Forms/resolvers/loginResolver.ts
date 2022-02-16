@@ -4,11 +4,11 @@ import {yupResolver} from '@hookform/resolvers/yup';
 const validationSchema = Yup.object()
   .shape({
     email: Yup.string()
-      .email('Por favor, verifique se o e-mail é válido.')
-      .required('O email é obrigatório.'),
+      .email('Please, check if the email is valid.')
+      .required('Email is required.'),
     password: Yup.string()
-      .required('A senha é obrigatória.')
-      .min(8, 'A senha precisa ter no mínimo 8 dígitos'),
+      .required('Password is required.')
+      .min(8, 'Password needs at least 8 digits'),
   })
   .required();
 
