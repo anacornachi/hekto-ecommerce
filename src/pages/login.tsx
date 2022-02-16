@@ -7,7 +7,6 @@ export default function Login() {
   return (
     <>
       <SubHeader title="My Account" />
-      <Footer />
     </>
   );
 }

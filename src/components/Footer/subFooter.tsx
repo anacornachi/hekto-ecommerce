@@ -1,7 +1,5 @@
 import {Flex, Text} from '@chakra-ui/react';
 import {BsFacebook, BsInstagram, BsTwitter} from 'react-icons/bs';
-import {TiSocialInstagramCircular} from 'react-icons/ti'
-import {AiFillTwitterCircle} from 'react-icons/ai';
 
 export default function subFooter(){
     return (

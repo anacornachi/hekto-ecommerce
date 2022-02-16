@@ -1,8 +1,8 @@
-import {Flex, InputGroup, Input, InputRightElement, Text, Heading, Link as ChakraLink} from '@chakra-ui/react';
+import {Flex, InputGroup, Input, InputRightElement, Text, Heading, Link,} from '@chakra-ui/react';
 import Container from '@components/layouts/Container';
 import {navigationFooter} from './navigation';
 
-export default function footer() {
+export default function topFooter() {
     return (
         <>
             <Flex bg="pantonePurple" >
@@ -52,34 +52,45 @@ export default function footer() {
                             >17 Princess Road, London, Greater London NW1 8JR, UK</Text>
                         </Flex>
 
-                        {navigationFooter.map((page) => (
-                            <Flex 
+                        {navigationFooter.map((page,key) => (
+                            <Flex key={key}
                                 direction="column"
                                 align={{base: 'center', lg: 'flex-start'}}
                                 >
-                                
                                 <Heading 
                                 fontSize="22px"
                                 color="black"
                                 fontFamily="josefin"
-                                mt="94px">{page.title}</Heading>
+                                mt="94px"
+                                mb="42px">
+                                    {page.title}
+                                </Heading>
 
-                                {page.subpage.subtitle.map((el,key) => key == 0 ? (<Text
-                                                                        mt="42px"
-                                                                        fontFamily="lato"
-                                                                        color="grey"
-                                                                        fontSize="16px">
-                                                                                {el}</Text>) : (<Text
-                                                                        mt="21px"
-                                                                        fontFamily="lato"
-                                                                        color="grey"
-                                                                        fontSize="16px">
-                                                                                {el}</Text>))}
+                                {page.navigation.map((el,key) => key == 0 ? (
+                                    <Link
+                                    fontFamily="lato"
+                                    color="grey"
+                                    fontSize="16px"
+                                    textDecoration="none"
+                                    href={el.link} passHref key={key}
+                                    _hover={{color: 'pink'}}
+                                    _focus={{boxShadow: 'none'}}>
+                                            {el.label}
+                                    </Link>) : (
+                                    <Link
+                                    mt="21px"
+                                    fontFamily="lato"
+                                    color="grey"
+                                    fontSize="16px"
+                                    textDecoration="none"
+                                    href={el.link} passHref key={key}
+                                    _hover={{color: 'pink'}}
+                                    _focus={{boxShadow: 'none'}}>
+                                            {el.label}
+                                    </Link>))}
                             </Flex>
                         ))}
                     </Flex>
-                   
-
                 </Container>
 
             </Flex>

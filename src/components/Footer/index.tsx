@@ -1,10 +1,10 @@
-import Footer from './footer';
+import TopFooter from './topFooter';
 import SubFooter from '@components/Footer/subFooter'
 
 export default function footer(){
     return (
         <>
-            <Footer />
+            <TopFooter />
             <SubFooter />
         </>
     )

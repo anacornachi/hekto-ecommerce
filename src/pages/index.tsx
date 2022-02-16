@@ -7,8 +7,6 @@ function HomePage() {
   return (
     <>
       <Banner />
-      
-      <Footer />
     </>
   );
 }
