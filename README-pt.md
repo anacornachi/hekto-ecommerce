@@ -4,7 +4,7 @@
 
 # **Hekto Ecommerce 🛍️**
 
-[🇺🇸 Read this page in English]('../hekto-ecommerce/README.md)
+[🇺🇸 Read this page in English]('./README.md)
 
 <br>
 
