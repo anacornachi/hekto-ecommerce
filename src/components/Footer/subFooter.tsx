@@ -1,7 +1,7 @@
 import {Flex, Text} from '@chakra-ui/react';
 import {BsFacebook, BsInstagram, BsTwitter} from 'react-icons/bs';
 
-export default function subFooter(){
+export default function SubFooter(){
     return (
         <>
             <Flex

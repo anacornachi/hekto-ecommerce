@@ -1,8 +1,9 @@
-import {Flex, InputGroup, Input, InputRightElement, Text, Heading, Link,} from '@chakra-ui/react';
+import {Flex, InputGroup, Input, InputRightElement, Text, Heading, Link as ChakraLink} from '@chakra-ui/react';
 import Container from '@components/layouts/Container';
 import {navigationFooter} from './navigation';
+import Link from 'next/link';
 
-export default function topFooter() {
+export default function TopFooter() {
     return (
         <>
             <Flex bg="pantonePurple" >
@@ -16,7 +17,8 @@ export default function topFooter() {
                         <Flex 
                             alignSelf={{base: 'center', lg: 'flex-start'}}
                             mt="94px"
-                            direction="column">
+                            direction="column"
+                            >
                             <Heading 
                                 as="h4"
                                 color="black"
@@ -52,7 +54,7 @@ export default function topFooter() {
                             >17 Princess Road, London, Greater London NW1 8JR, UK</Text>
                         </Flex>
 
-                        {navigationFooter.map((page,key) => (
+                        {navigationFooter && navigationFooter.map((page,key) => (
                             <Flex key={key}
                                 direction="column"
                                 align={{base: 'center', lg: 'flex-start'}}
@@ -61,38 +63,30 @@ export default function topFooter() {
                                 fontSize="22px"
                                 color="black"
                                 fontFamily="josefin"
-                                mt="94px"
+                                mt={{base: '40px', lg: '94px'}}
                                 mb="42px">
                                     {page.title}
                                 </Heading>
 
-                                {page.navigation.map((el,key) => key == 0 ? (
-                                    <Link
-                                    fontFamily="lato"
-                                    color="grey"
-                                    fontSize="16px"
-                                    textDecoration="none"
-                                    href={el.link} passHref key={key}
-                                    _hover={{color: 'pink'}}
-                                    _focus={{boxShadow: 'none'}}>
+                                {page.navigation.map((el,key) => (
+                                    <Link href={el.link} passHref key={key}>
+                                        <ChakraLink
+                                        mt={key === 0 ? '0' : '21px'}
+                                        mb={key === 5 ? '40px' : '0'}
+                                        fontFamily="lato"
+                                        color="grey"
+                                        fontSize="16px"
+                                        textDecoration="none"
+                                        _hover={{color: 'pink'}}
+                                        _focus={{boxShadow: 'none'}}>
                                             {el.label}
-                                    </Link>) : (
-                                    <Link
-                                    mt="21px"
-                                    fontFamily="lato"
-                                    color="grey"
-                                    fontSize="16px"
-                                    textDecoration="none"
-                                    href={el.link} passHref key={key}
-                                    _hover={{color: 'pink'}}
-                                    _focus={{boxShadow: 'none'}}>
-                                            {el.label}
-                                    </Link>))}
+                                        </ChakraLink>
+                                    </Link>
+                                    ))}
                             </Flex>
                         ))}
                     </Flex>
                 </Container>
-
             </Flex>
         </>
     )

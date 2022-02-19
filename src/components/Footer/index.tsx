@@ -1,7 +1,7 @@
-import TopFooter from './topFooter';
-import SubFooter from '@components/Footer/subFooter'
+import SubFooter from "./subFooter";
+import TopFooter from "./topFooter";
 
-export default function footer(){
+export default function Footer(){
     return (
         <>
             <TopFooter />
