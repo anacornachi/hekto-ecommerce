@@ -26,13 +26,9 @@
     "test": "jest --watch"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "@types/node": "^17.0.15",
-=======
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@types/node": "^17.0.14",
->>>>>>> 997b379f28cd4b9907760e311e008bd0e610a876
     "@types/react": "^17.0.38",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "eslint": "8.8.0",
