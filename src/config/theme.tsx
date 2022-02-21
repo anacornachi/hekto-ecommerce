@@ -13,7 +13,8 @@ const theme = extendTheme({
     offBlue: '#151875',
     skyBlue: 'linear-gradient(121.53deg, #F3F9FF 0%, #F1F0FF 100%)',
     lightPurple: '#E7E4F8',
-    grey: '#9DA0AE'
+    grey: '#9DA0AE',
+    description: '#9096B2',
   },
   fonts: {
     josefin: "'Josefin Sans', sans-serif",
@@ -31,6 +32,34 @@ const theme = extendTheme({
           alignItems: 'center',
           _focus: {
             boxShadow: 'none',
+          },
+        },
+        primary: {
+          fontFamily: 'josefin',
+          px: '30px',
+          fontSize: '16px',
+          h: '44px',
+          borderRadius: '3px',
+          d: 'flex',
+          alignItems: 'center',
+          bg: 'pink',
+          pt: '3px',
+          color: 'white',
+          _focus: {
+            boxShadow: 'none',
+          },
+        },
+      },
+    },
+    Input: {
+      variants: {
+        outlineInput: {
+          field: {
+            size: 'lg',
+            border: '1px',
+            borderStyle: 'solid',
+            borderColor: '#C2C5E1',
+            borderRadius: '3px',
           },
         },
       },
