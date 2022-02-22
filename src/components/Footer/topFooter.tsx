@@ -53,6 +53,7 @@ export default function TopFooter() {
                                 mt="12px"
                                 fontFamily="lato"
                                 color="grey"
+                                textAlign="center"
                             >
                                 17 Princess Road, London, Greater London NW1 8JR, UK
                             </Text>
