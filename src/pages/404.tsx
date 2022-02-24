@@ -3,6 +3,7 @@ import Container from '@components/layouts/Container';
 import SubHeader from '@components/SubHeader';
 import Image from 'next/image';
 import notFound from '@public/images/not-found.png';
+import BrandsCarousel from '@components/ui/BrandsCarousel';
 
 export default function NotFound() {
   return (
@@ -26,7 +27,10 @@ export default function NotFound() {
           >
             oops! The page you requested was not found!
           </Heading>
-          <Button variant="primary">Back to Home</Button>
+          <Button variant="primary" mb={{base: '50px', lg: '110px'}}>
+            Back to Home
+          </Button>
+          <BrandsCarousel />
         </Flex>
       </Container>
     </>
