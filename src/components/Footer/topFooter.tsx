@@ -1,4 +1,4 @@
-import {Flex, InputGroup, Input, InputRightElement, Text, Heading, Link as ChakraLink} from '@chakra-ui/react';
+import {Flex, InputGroup, Input, InputRightElement, Text, Heading, Link as ChakraLink, UnorderedList, ListItem} from '@chakra-ui/react';
 import Container from '@components/layouts/Container';
 import {navigationFooter} from './navigation';
 import Link from 'next/link';
@@ -15,9 +15,9 @@ export default function TopFooter() {
                         align={{base: 'center', lg: 'flex-start'}}
                         >
                         <Flex 
-                            alignSelf={{base: 'center', lg: 'flex-start'}}
-                            mt="94px"
+                            m="94px 20px 20px 20px"
                             direction="column"
+                            align={{base: 'center', lg: 'flex-start'}}
                             >
                             <Heading 
                                 as="h4"
@@ -31,14 +31,14 @@ export default function TopFooter() {
                                     color="white"
                                     cursor="pointer"
                                     borderRadius="3px"
-                                    width="135px"
-                                    h={{base: '40px', lg: '40px'}}
+                                    width={{base: '80px', md:'135px', lg: '135px'}}
+                                    h={{base: '40px', md:'40px', lg: '40px'}}
                                 >Sign Up</InputRightElement>
                                 <Input
                                     mt="31px"
                                     placeholder="Enter Email Address"
                                     borderRadius="3px"
-                                    width="377px"
+                                    width={{base: '280px', md: '377px', lg: '377px'}}
                                 />
                             </InputGroup>
 
@@ -46,12 +46,18 @@ export default function TopFooter() {
                                 mt="25px"
                                 fontFamily="lato"
                                 color="grey"
-                            >Contact Info</Text>
-                            <Text
-                                mt="10px"
+                            >
+                                Contact Info
+                            </Text>
+                            <Text 
+                                mt="12px"
                                 fontFamily="lato"
                                 color="grey"
-                            >17 Princess Road, London, Greater London NW1 8JR, UK</Text>
+                                textAlign="center"
+                            >
+                                17 Princess Road, London, Greater London NW1 8JR, UK
+                            </Text>
+                            
                         </Flex>
 
                         {navigationFooter && navigationFooter.map((page,key) => (
@@ -64,7 +70,7 @@ export default function TopFooter() {
                                 color="black"
                                 fontFamily="josefin"
                                 mt={{base: '40px', lg: '94px'}}
-                                mb="42px">
+                                mb={{base: '25px', lg: '42px'}}>
                                     {page.title}
                                 </Heading>
 
