@@ -3,10 +3,10 @@ import {yupResolver} from '@hookform/resolvers/yup';
 
 const validationSchema = Yup.object().shape({
   firstName: Yup.string()
-    .min(3, 'Needs at least 3 characters')
+    .min(2, 'Needs at least 2 characters')
     .required('This field is required.'),
   lastName: Yup.string()
-    .min(3, 'Needs at least 3 characters')
+    .min(2, 'Needs at least 2 characters')
     .required('This field is required.'),
   email: Yup.string()
     .email('Please, check if the email is valid')
