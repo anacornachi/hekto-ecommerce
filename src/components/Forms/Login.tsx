@@ -39,6 +39,7 @@ export default function Login() {
 
   return (
     <>
+      teste
       <Flex
         align="center"
         justify="center"
@@ -56,7 +57,7 @@ export default function Login() {
           as="form"
           onSubmit={methods.handleSubmit(onSubmit, onError)}
         >
-          <Heading fontSize="32px" fontFamily="josefin">
+          <Heading as="h2" fontSize="32px" fontFamily="josefin">
             Login
           </Heading>
           <Text
