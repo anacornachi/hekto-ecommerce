@@ -50,7 +50,7 @@ export default function Contact() {
             height="166px"
             overflowY="auto"
           />
-          <Button variant="primary" w="20%" type="submit">
+          <Button variant="primary" w={{base: '50%', lg: '20%'}} type="submit">
             Send Mail
           </Button>
         </FormProvider>

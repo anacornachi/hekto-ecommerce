@@ -10,7 +10,7 @@ export default function ContactUs() {
   return (
     <>
       <SubHeader title="Contact Us" />
-      <Container py="100px">
+      <Container py={{base: '50px', lg: '100px'}}>
         <Flex w="100%" direction={{base: 'column', lg: 'row'}}>
           <Flex direction="column" w={{base: '100%', lg: '50%'}}>
             <Heading
@@ -18,6 +18,7 @@ export default function ContactUs() {
               color="navyBlue"
               fontFamily="josefin"
               fontSize="36px"
+              textAlign={{base: 'center', md: 'inherit'}}
             >
               Information About us
             </Heading>
@@ -26,7 +27,8 @@ export default function ContactUs() {
               fontSize="16px"
               color="#8A8FB9"
               mt="10px"
-              w="80%"
+              w={{base: '100%', lg: '80%'}}
+              textAlign={{base: 'center', md: 'inherit'}}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis
               neque ultrices mattis aliquam, malesuada diam est. Malesuada sem
@@ -39,18 +41,24 @@ export default function ContactUs() {
               <Circle size="25px" bg="#37DAF3" />
             </Flex>
           </Flex>
-          <Flex w="50%" direction="column">
+          <Flex w={{base: '100%', lg: '50%'}} direction="column">
             <Heading
               as="h3"
               color="navyBlue"
               fontFamily="josefin"
               fontSize="36px"
-              mb="26px"
+              mb={{base: '40px', md: '26px'}}
+              mt={{base: '60px', lg: 0}}
+              textAlign={{base: 'center', md: 'inherit'}}
             >
               Contact Way
             </Heading>
-            <Flex>
-              <Flex w="50%" direction="column" gridGap="49px">
+            <Flex direction={{base: 'column', md: 'row'}}>
+              <Flex
+                w={{base: '100%', lg: '50%'}}
+                direction="column"
+                gridGap="49px"
+              >
                 <Flex>
                   <Circle size="45px" bg="#5625DF" />
                   <Text
@@ -74,7 +82,12 @@ export default function ContactUs() {
                   </Text>
                 </Flex>
               </Flex>
-              <Flex w="50%" direction="column" gridGap="49px">
+              <Flex
+                w={{base: '100%', lg: '50%'}}
+                direction="column"
+                gridGap="49px"
+                mt={{base: '49px', md: 0}}
+              >
                 <Flex>
                   <Circle size="45px" bg="#FB2E86" />
                   <Text
@@ -101,13 +114,18 @@ export default function ContactUs() {
             </Flex>
           </Flex>
         </Flex>
-        <Flex w="100%" mt="100px" direction={{base: 'column', lg: 'row'}}>
-          <Flex w="40%" direction="column" mt="30px">
+        <Flex
+          w="100%"
+          mt={{base: '40px', lg: '100px'}}
+          direction={{base: 'column', lg: 'row'}}
+        >
+          <Flex w={{base: '100%', lg: '40%'}} direction="column" mt="30px">
             <Heading
               as="h3"
               color="navyBlue"
               fontFamily="josefin"
               fontSize="36px"
+              textAlign={{base: 'center', md: 'inherit'}}
             >
               Get In Touch
             </Heading>
@@ -125,7 +143,11 @@ export default function ContactUs() {
             </Text>
             <Contact />
           </Flex>
-          <Flex w="60%" justify="center">
+          <Flex
+            w={{base: '100%', lg: '60%'}}
+            mt={{base: '30px', lg: 0}}
+            justify="center"
+          >
             <Image src={contactUs} alt="" />
           </Flex>
         </Flex>
