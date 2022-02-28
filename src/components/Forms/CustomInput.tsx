@@ -74,6 +74,7 @@ export default function CustomInput({
         mt="4px"
         color="pink"
         position="absolute"
+        id={`error-message-${name}`}
       >
         {String(error?.message)}
       </FormErrorMessage>
