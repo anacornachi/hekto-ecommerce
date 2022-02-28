@@ -4,9 +4,12 @@ import {FiMail, FiPhoneCall, FiHeart} from 'react-icons/fi';
 import {BiUser} from 'react-icons/bi';
 import {BsCart2} from 'react-icons/bs';
 import {useRouter} from 'next/router';
+import {useSession} from 'next-auth/react';
 
 export default function TopHeader() {
   const router = useRouter();
+  const {data: session, status} = useSession();
+  const isAuthenticated = status === 'authenticated';
   return (
     <>
       <Flex bg="purple" h="44px" align="center">
@@ -47,7 +50,12 @@ export default function TopHeader() {
             >
               <Button
                 variant="nav"
-                onClick={() => router.push('/account/login')}
+                onClick={
+                  isAuthenticated
+                    ? () => router.push('/account/myaccount')
+                    : () => router.push('/account/login')
+                }
+                //
               >
                 <Text
                   mt="1px"
@@ -55,7 +63,7 @@ export default function TopHeader() {
                   lineHeight="initial"
                   d={{base: 'none', md: 'block'}}
                 >
-                  Login
+                  {isAuthenticated ? `Hi, ${session.name}` : 'Login'}
                 </Text>
                 <BiUser />
               </Button>
