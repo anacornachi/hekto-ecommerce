@@ -39,7 +39,6 @@ export default function Login() {
 
   return (
     <>
-      teste
       <Flex
         align="center"
         justify="center"
