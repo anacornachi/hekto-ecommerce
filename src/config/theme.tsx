@@ -3,7 +3,18 @@ import {extendTheme} from '@chakra-ui/react';
 const theme = extendTheme({
   colors: {
     pink: '#FB2E86',
-    red: '#FB2448',
+    red: {
+      50: '#ffe2e9',
+      100: '#ffb2bf',
+      200: '#ff8196',
+      300: '#fd4f6d',
+      400: '#FB2448',
+      500: '#e10429',
+      600: '#b0001f',
+      700: '#7e0016',
+      800: '#4e000c',
+      900: '#200004',
+    },
     blue: '#2F1AC4',
     offNavyBlue: '#3F509E',
     navyBlue: '#151875',

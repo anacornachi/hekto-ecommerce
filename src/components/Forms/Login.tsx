@@ -27,8 +27,8 @@ export default function Login() {
       // Handle auth failed
       console.log('auth failed', auth.error);
       toast({
-        title: 'Falha no login',
-        description: 'Verifique os dados digitados e tente novamente',
+        title: 'Failed to login',
+        description: 'Check the data and try again',
         status: 'error',
         position: 'bottom-end',
       });

@@ -1,10 +1,20 @@
-import {Flex, Button, Text, Circle} from '@chakra-ui/react';
+import {
+  Flex,
+  Button,
+  Text,
+  Circle,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from '@chakra-ui/react';
 import Container from '@components/layouts/Container';
 import {FiMail, FiPhoneCall, FiHeart} from 'react-icons/fi';
 import {BiUser} from 'react-icons/bi';
 import {BsCart2} from 'react-icons/bs';
 import {useRouter} from 'next/router';
 import {useSession} from 'next-auth/react';
+import {FiChevronDown} from 'react-icons/fi';
 
 export default function TopHeader() {
   const router = useRouter();
@@ -48,14 +58,13 @@ export default function TopHeader() {
               align="center"
               gridGap={{base: '10px', md: '48px'}}
             >
-              <Button
+              {/* <Button
                 variant="nav"
                 onClick={
                   isAuthenticated
                     ? () => router.push('/account/myaccount')
                     : () => router.push('/account/login')
                 }
-                //
               >
                 <Text
                   mt="1px"
@@ -63,10 +72,34 @@ export default function TopHeader() {
                   lineHeight="initial"
                   d={{base: 'none', md: 'block'}}
                 >
-                  {isAuthenticated ? `Hi, ${session.name}` : 'Login'}
+                  {isAuthenticated ? `Hi, ${session.firstName}` : 'Login'}
                 </Text>
                 <BiUser />
-              </Button>
+              </Button> */}
+              <Menu closeOnBlur={true}>
+                <MenuButton
+                  fontFamily="josefin"
+                  bg="none"
+                  boxShadow="none"
+                  _focus={{boxShadow: 'none', bg: 'none'}}
+                  _hover={{bg: 'none'}}
+                  _active={{bg: 'none'}}
+                  as={Button}
+                  rightIcon={<FiChevronDown />}
+                >
+                  Hi, Ana
+                </MenuButton>
+                <MenuList
+                  bg="offPurple"
+                  fontFamily="lato"
+                  _selected={{bg: 'green'}}
+                >
+                  <MenuItem _hover={{bg: 'red'}}>My Account</MenuItem>
+                  <MenuItem>Wishlist</MenuItem>
+                  <MenuItem>Sign out</MenuItem>
+                </MenuList>
+              </Menu>
+              {/* fim do teste */}
               <Button variant="nav">
                 <Text
                   mt="1px"

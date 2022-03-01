@@ -1,7 +1,7 @@
 import jwt from 'jwt-decode';
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import {signIn} from '@services/auth';
+import {authenticate} from '@services/auth';
 
 export default NextAuth({
   providers: [
@@ -14,13 +14,11 @@ export default NextAuth({
       async authorize(credentials) {
         if (credentials) {
           try {
-            const {token} = await signIn(credentials);
+            const {token, user} = await authenticate(credentials);
             if (token) {
-              const user = jwt(token) as TSession;
-
               return {
                 id: user.id,
-                name: user.name,
+                firstName: user.firstName,
                 email: credentials.email,
                 token,
               };
@@ -57,7 +55,7 @@ export default NextAuth({
         expires: expires,
         ...(token.user as {
           id: number;
-          name: string;
+          firstName: string;
           email: string;
           token: string;
           expires: string;
