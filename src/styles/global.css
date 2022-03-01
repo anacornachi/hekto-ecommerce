@@ -1,0 +1,7 @@
+.navigation-header::-webkit-scrollbar {
+  display: none;
+}
+.navigation-header {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

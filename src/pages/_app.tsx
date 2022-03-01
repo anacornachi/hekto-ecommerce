@@ -4,6 +4,7 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import {SessionProvider} from 'next-auth/react';
 import {AppProps} from 'next/app';
+import '../styles/global.css';
 
 function MyApp({Component, pageProps: {session, ...pageProps}}: AppProps) {
   // console.log(theme.components);
