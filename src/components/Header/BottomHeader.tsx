@@ -31,7 +31,14 @@ export default function BottomHeader() {
               mt="5px"
               w={{base: '40%', lg: '12%'}}
             >
-              Hekto
+              <Link href="/" passHref>
+                <ChakraLink
+                  _hover={{border: 'none'}}
+                  _focus={{boxShadow: 'none'}}
+                >
+                  Hekto
+                </ChakraLink>
+              </Link>
             </Heading>
             <Flex
               fontFamily="lato"
@@ -40,6 +47,7 @@ export default function BottomHeader() {
               gridGap="35px"
               overflowX="scroll"
               justify={{base: 'space-between', lg: 'initial'}}
+              className="navigation-header"
             >
               {navigation.map((page, key) => (
                 <Link href={page.link} passHref key={key}>

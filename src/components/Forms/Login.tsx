@@ -10,21 +10,38 @@ import Link from 'next/link';
 import {FormProvider, useForm} from 'react-hook-form';
 import {loginResolver} from '@components/Forms/resolvers/loginResolver';
 import CustomInput from './CustomInput';
+import {signIn} from 'next-auth/react';
+import {useRouter} from 'next/router';
 
 export default function Login() {
   const toast = useToast();
   const methods = useForm({resolver: loginResolver, mode: 'onChange'});
+  const router = useRouter();
 
   const onSubmit = async (data: any) => {
-    console.log(data);
-    toast({
-      status: 'success',
-      title: 'Welcome!',
-      position: 'bottom-right',
-      duration: 4000,
-      isClosable: true,
-    });
-    methods.reset();
+    const auth = (await signIn('credentials', {
+      redirect: false,
+      ...data,
+    })) as any;
+    if (auth?.error) {
+      // Handle auth failed
+      console.log('auth failed', auth.error);
+      toast({
+        title: 'Falha no login',
+        description: 'Verifique os dados digitados e tente novamente',
+        status: 'error',
+        position: 'bottom-end',
+      });
+    } else {
+      toast({
+        status: 'success',
+        title: 'Welcome!',
+        position: 'bottom-right',
+        duration: 4000,
+        isClosable: true,
+      });
+      router.push('/');
+    }
   };
 
   const onError = () => {
