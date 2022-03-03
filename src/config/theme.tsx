@@ -21,11 +21,12 @@ const theme = extendTheme({
     pantonePurple: '#f6f5ff',
     purple: '#7E33E0',
     offPurple: '#9F63B5',
-    offBlue: '#151875',
+    offBlue: '#2F1AC4',
     skyBlue: 'linear-gradient(121.53deg, #F3F9FF 0%, #F1F0FF 100%)',
     lightPurple: '#E7E4F8',
     grey: '#9DA0AE',
     description: '#9096B2',
+    lightGreen: '#EBF4F3',
   },
   fonts: {
     josefin: "'Josefin Sans', sans-serif",
