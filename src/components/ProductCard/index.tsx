@@ -32,7 +32,7 @@ export default function ProductCard({
               <Image src={main_image} alt="" objectFit="contain" />
             </Flex>
           )}
-          <Actions position="absolute" mainColor="white" variant="top" />
+          <Actions position="absolute" mainColor="white" />
         </Flex>
         <Flex
           direction="column"
