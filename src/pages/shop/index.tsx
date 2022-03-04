@@ -17,9 +17,9 @@ export default function ShopGrid() {
           w="100%"
           gap={{base: 0, sm: '30px', md: '43px', lg: '63px', xl: '93px'}}
           wrap="wrap"
-          mt={{base: '20px'}}
           justify="center"
-          py="70px"
+          pt="70px"
+          py="40px"
         >
           {products.map((product) => (
             <ProductCard key={product.id} {...product} variant="circle" />
