@@ -1,6 +1,4 @@
-import {string} from 'yup/lib/locale';
-
-type TProducts = {
+type TProduct = {
   alt?: string;
   code?: string;
   color?: string[];
@@ -8,7 +6,7 @@ type TProducts = {
   description?: string;
   id?: string;
   image?: string[];
-  main_image?: string;
+  main_image?: string | StaticImageData;
   price?: number;
   promotion?: number;
   rate?: number;

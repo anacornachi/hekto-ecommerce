@@ -8,6 +8,7 @@ import {
   MenuList,
   MenuItem,
   InputRightElement,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import Container from '@components/layouts/Container';
 import {FiMail, FiPhoneCall, FiHeart} from 'react-icons/fi';
@@ -18,6 +19,7 @@ import {useSession} from 'next-auth/react';
 import {FiChevronDown} from 'react-icons/fi';
 
 export default function TopHeader() {
+  const [isLargerThan400px] = useMediaQuery('(min-width: 400px)');
   const router = useRouter();
   const {data: session, status} = useSession();
   const isAuthenticated = status === 'authenticated';
@@ -71,7 +73,11 @@ export default function TopHeader() {
                     as={Button}
                     rightIcon={<FiChevronDown />}
                   >
-                    Hi, {session.firstName}
+                    {isLargerThan400px ? (
+                      `Hi, ${session.firstName}`
+                    ) : (
+                      <BiUser />
+                    )}
                   </MenuButton>
                   <MenuList bg="offPurple" fontFamily="lato">
                     <MenuItem

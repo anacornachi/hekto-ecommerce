@@ -1,10 +1,12 @@
 import {Circle, Flex, Heading, Text} from '@chakra-ui/react';
+import convertToUSD from '@utils/ConvertToUSD';
+
 import Image from 'next/image';
-import {TProducts} from 'src/types/products';
+import {useState} from 'react';
+
 import Actions from './Actions';
 
 export default function ProductCard({
-  image,
   main_image,
   alt,
   title,
@@ -16,23 +18,33 @@ export default function ProductCard({
   colorType,
   variant,
   rate,
-}: TProducts) {
+}: TProduct) {
+  const [isHover, setHover] = useState(false);
+
   return (
     <>
-      <Flex direction="column" w="270px" color="navyBlue">
+      <Flex
+        direction="column"
+        w={{base: '100%'}}
+        maxW="270px"
+        minW="270px"
+        color="navyBlue"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        cursor="pointer"
+      >
         <Flex
           w="100%"
           position="relative"
           h="280px"
-          cursor="pointer"
-          _hover={{bg: 'lightGreen'}}
+          bg={isHover ? 'lightGreen' : '#F6F7FB'}
         >
           {main_image && (
             <Flex w="100%" h="100%" justify="center">
-              <Image src={main_image} alt="" objectFit="contain" />
+              <Image src={main_image} alt={alt} objectFit="contain" />
             </Flex>
           )}
-          <Actions position="absolute" mainColor="white" />
+          {isHover && <Actions position="absolute" mainColor="white" />}
         </Flex>
         <Flex
           direction="column"
@@ -49,7 +61,7 @@ export default function ProductCard({
             maxWidth="100%"
             isTruncated
           >
-            Cantilever chair
+            {title}
           </Heading>
           <Flex gap="6px">
             <Circle size="10px" bg="#DE9034"></Circle>
@@ -61,13 +73,13 @@ export default function ProductCard({
           <Flex gap="10px">
             {promotion ? (
               <>
-                <Text p="0">{promotion}</Text>
+                <Text p="0">{convertToUSD(promotion)}</Text>
                 <Text p="0" as="del" color="pink">
-                  {price}
+                  {convertToUSD(price)}
                 </Text>
               </>
             ) : (
-              <Text p="0">{price}</Text>
+              <Text p="0">{convertToUSD(price)}</Text>
             )}
           </Flex>
         </Flex>

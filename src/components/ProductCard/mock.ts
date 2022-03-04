@@ -26,7 +26,7 @@ export const products = [
     slug: 'confort-handy-craft',
     description: '',
     price: 65.0,
-    promotion: '',
+    promotion: undefined,
     url: '',
     color: [],
     rate: 5,
