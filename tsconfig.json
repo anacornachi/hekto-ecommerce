@@ -23,6 +23,12 @@
       "@public/*": ["./public/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./jest-setup.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "./jest-setup.ts",
+    "**/*.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
