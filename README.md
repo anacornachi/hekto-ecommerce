@@ -74,3 +74,5 @@ The following tools were used to develop this project:
 - [Jest](https://jestjs.io/pt-BR/)
 - [Testing Library](https://testing-library.com/)
 - [Chakra UI](https://chakra-ui.com/)
+- [Axios](https://axios-http.com/)
+- [NextAuth](https://next-auth.js.org/)
