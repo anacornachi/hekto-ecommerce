@@ -22,7 +22,14 @@ export default function ShopGrid() {
           py="40px"
         >
           {products.map((product) => (
-            <ProductCard key={product.id} {...product} variant="circle" />
+            <ProductCard
+              key={product.id}
+              data={product}
+              variant="grid"
+              code={false}
+              bullets={true}
+              shadow={false}
+            />
           ))}
         </Flex>
         <BrandsCarousel mb="0" />

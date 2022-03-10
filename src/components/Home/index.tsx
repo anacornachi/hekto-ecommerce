@@ -20,40 +20,60 @@ export default function Home() {
             </Heading>
             <Flex gap="30px">
               {products.map((product) => (
-                <ProductCard data={product} variant="featured" />
+                <ProductCard
+                  data={product}
+                  variant="featured"
+                  code={true}
+                  bullets={true}
+                  shadow={true}
+                />
               ))}
             </Flex>
-          </Flex>
-          <Flex as="section" direction="column" align="center" gap="48px">
-            <Heading
-              as="h2"
-              fontFamily="josefin"
-              fontSize="42px"
-              color="navyBlue"
-            >
-              Latest Products
-            </Heading>
-            <Flex gap="30px">
-              {products.map((product) => (
-                <ProductCard data={product} variant="latest" />
-              ))}
+            <Flex as="section" direction="column" align="center" gap="48px">
+              <Heading
+                as="h2"
+                fontFamily="josefin"
+                fontSize="42px"
+                color="navyBlue"
+              >
+                Latest Products
+              </Heading>
+              <Flex gap="30px">
+                {products.map((product) => (
+                  <ProductCard
+                    data={product}
+                    variant="latest"
+                    code={false}
+                    bullets={false}
+                    shadow={false}
+                  />
+                ))}
+              </Flex>
+            </Flex>
+            <Flex as="section" direction="column" align="center" gap="48px">
+              <Heading
+                as="h2"
+                fontFamily="josefin"
+                fontSize="42px"
+                color="navyBlue"
+              >
+                Trending Products
+              </Heading>
+              <Flex gap="30px">
+                {products.map((product) => (
+                  <ProductCard
+                    data={product}
+                    variant="trending"
+                    code={false}
+                    bullets={false}
+                    shadow={true}
+                  />
+                ))}
+              </Flex>
             </Flex>
           </Flex>
-          <Flex as="section" direction="column" align="center" gap="48px">
-            <Heading
-              as="h2"
-              fontFamily="josefin"
-              fontSize="42px"
-              color="navyBlue"
-            >
-              Trending Products
-            </Heading>
-            <Flex gap="30px">
-              {products.map((product) => (
-                <ProductCard data={product} variant="trending" />
-              ))}
-            </Flex>
-          </Flex>
+          {/* 
+         
           <Flex as="section" direction="column" align="center" gap="48px">
             <Heading
               as="h2"
@@ -69,6 +89,21 @@ export default function Home() {
               ))}
             </Flex>
           </Flex>
+          <Flex as="section" direction="column" align="center" gap="48px">
+            <Heading
+              as="h2"
+              fontFamily="josefin"
+              fontSize="42px"
+              color="navyBlue"
+            >
+              Grid
+            </Heading>
+            <Flex gap="30px">
+              {products.map((product) => (
+                <ProductCard data={product} variant="grid" />
+              ))}
+            </Flex>
+          </Flex> */}
         </Flex>
       </Container>
     </>
