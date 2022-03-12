@@ -10,6 +10,12 @@ import Link from 'next/link';
 import {FormProvider, useForm} from 'react-hook-form';
 import {signUpResolver} from '@components/Forms/resolvers/signUpResolver';
 import CustomInput from './CustomInput';
+import {signUp} from '@services/auth';
+import {capitalize} from '@utils/capitalize';
+import createUserSerializer from '@utils/createUserSerializer';
+
+import {signIn} from 'next-auth/react';
+import {useRouter} from 'next/router';
 
 const signUpInputs = [
   {name: 'firstName', type: 'text', placeholder: 'First Name'},
@@ -30,17 +36,35 @@ const signUpInputs = [
 export default function SignUp() {
   const toast = useToast();
   const methods = useForm({resolver: signUpResolver, mode: 'onChange'});
+  const router = useRouter();
 
   const onSubmit = async (data: any) => {
-    console.log(data);
-    toast({
-      status: 'success',
-      title: 'Account created successfully!',
-      position: 'bottom-right',
-      duration: 4000,
-      isClosable: true,
-    });
-    methods.reset();
+    const serializedData = createUserSerializer(data);
+    const {email, password} = serializedData;
+    try {
+      await signUp(serializedData);
+      router.push('/');
+      await signIn('credentials', {
+        redirect: false,
+        ...{email, password},
+      });
+      toast({
+        status: 'success',
+        title: 'Account created successfully!',
+        position: 'bottom-right',
+        duration: 4000,
+        isClosable: true,
+      });
+    } catch (error) {
+      toast({
+        status: 'error',
+        title: 'Unable to register. Check the info and try again.',
+        position: 'bottom-right',
+        duration: 4000,
+        isClosable: true,
+      });
+      methods.reset();
+    }
   };
 
   const onError = () => {
