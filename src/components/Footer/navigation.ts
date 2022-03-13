@@ -67,8 +67,8 @@ export const navigationFooter = [
                 label: 'Categories'
             },
             {
-                link: '/pages',
-                label: 'Pre-built Pages'
+                link: '/about',
+                label: 'About Us'
             },
             {
                 link: '/visual',
