@@ -1,11 +1,15 @@
 import React from 'react';
 import { Flex } from '@chakra-ui/react'
-import Image from 'next/image';
+import BrandsCarousel from '@components/ui/BrandsCarousel'
 
 export default function Brands() {
     return (
-        <Flex>
-            <Image src='' alt=''/>
+        <Flex
+        justify="center"
+        align="center"
+        h="305px"
+        >
+            <BrandsCarousel />
         </Flex>
     )
 }
