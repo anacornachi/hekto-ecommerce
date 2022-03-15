@@ -9,16 +9,35 @@ export default function Clients(){
     let data = clientData[currentState]
 
     const pictures = clientData.map((el,key) => {
+        return (<Flex
+            key={el.id}
+            marginTop={currentState == key ? '60px' : '73px'}
+            transition="1s"
+            opacity={currentState != key ? '0.5' : '1'}
+            borderRadius="3px"
+            overflow="hidden"
+            >
+                <Image 
+                src={el.image} 
+                alt={el.alt}
+                width="55px"
+                height="59px"
+                layout="fixed"
+                onClick={() => updateState(key)}
+                />
+            </Flex>)
+    })
+
+    const indicators = clientData.map((el,key) => {
         return (
-            <Image 
-                    src={el.image} 
-                    alt={el.alt}
-                    width="55px"
-                    height="59px"
-                    onClick={() => updateState(key)}
-                    />
+        <Circle
+            marginTop="18px"
+            bg="pink"
+            size={currentState == key ? '10px' : '5px'}
+            opacity={currentState != key ? '0.5' : '1'} />
         )
     })
+            
 
     return (
         <Flex
@@ -32,7 +51,7 @@ export default function Clients(){
                 fontSize="42px"
                 color="black"
                 fontFamily="josefin"
-                marginBottom="73px" >
+                >
                     Our Clients Say!
                 </Heading>
             <Flex 
@@ -59,11 +78,19 @@ export default function Clients(){
                     {data.role}
                 </Text>
                 <Text
+                marginTop="14px"
                 width="690px"
                 fontSize="16px"
                 color="description" >
                     {data.testimonial}
                 </Text>
+                <Flex
+                direction="row"
+                justify="center"
+                align="center"
+                gap="6px">
+                    {indicators}
+                </Flex>
             </Flex>
         </Flex>
         

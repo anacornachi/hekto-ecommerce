@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Flex, Heading, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
 export default function FeaturesCard(props: {id: number, image: string, alt: string, title: string, text: string}) {
+    let [isHover, setHover] = useState(false)
+
     return (
     <Flex
         boxShadow="xl"
@@ -14,9 +16,10 @@ export default function FeaturesCard(props: {id: number, image: string, alt: str
         w="270px"
         p="27px"
         textAlign="center"
-        borderBottom="solid"
-        borderColor="transparent"
-        _hover={{borderColor: '#DE9034'}}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        borderBottom={isHover ? 'solid' : 'none'}
+        borderColor="#DE9034"
         >
             <Image 
             src={props.image} 
