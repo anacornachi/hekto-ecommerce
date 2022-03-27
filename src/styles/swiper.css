@@ -22,9 +22,11 @@
 span.swiper-pagination-bullet {
   background-color: #fb2e86;
   height: 4px;
-  border-radius: unset;
+  border-radius: 10px;
+  width: 16px;
 }
 
 .swiper-pagination-bullet-active {
   background-color: #fb2e86;
+  transform: scale(1.2);
 }

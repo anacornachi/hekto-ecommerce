@@ -1,6 +1,6 @@
 import {Button, Flex, Heading} from '@chakra-ui/react';
 import Container from '@components/layouts/Container';
-import SubHeader from '@components/SubHeader';
+import SubHeader from '@components/shared/SubHeader';
 import Image from 'next/image';
 import notFound from '@public/images/not-found.png';
 

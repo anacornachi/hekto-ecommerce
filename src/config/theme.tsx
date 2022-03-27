@@ -22,7 +22,7 @@ const theme = extendTheme({
     purple: '#7E33E0',
     offPurple: '#9F63B5',
     offBlue: '#2F1AC4',
-    skyBlue: 'linear-gradient(121.53deg, #F3F9FF 0%, #F1F0FF 100%)',
+    skyBlue: '#F1F0FF',
     lightPurple: '#E7E4F8',
     grey: '#9DA0AE',
     description: '#9096B2',

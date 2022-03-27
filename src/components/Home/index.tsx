@@ -1,55 +1,37 @@
-import {Flex, Heading} from '@chakra-ui/react';
+import {Box, Button, Circle, Flex, Heading, Text} from '@chakra-ui/react';
 import Container from '@components/layouts/Container';
-import ProductCard from '@components/ProductCard';
-import {products} from '@components/ProductCard/mock';
-import React from 'react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import FeaturedSection from './sections/Featured';
+import LatestSection from './sections/Latest';
+import Image from 'next/image';
+
+import TrendingSection from './sections/Trending';
+import UniqueFeatures from '@components/Banners/UniqueFeatures';
 
 export default function Home() {
   return (
     <>
-      <Container py="120px">
-        <Flex direction="column" gap="100px">
-          <Flex as="section" direction="column" align="center" gap="48px">
-            <Heading
-              as="h2"
-              fontFamily="josefin"
-              fontSize="42px"
-              color="navyBlue"
-            >
-              Featured Products
-            </Heading>
-            <Flex gap="30px">
-              {products.map((product) => (
-                <ProductCard
-                  data={product}
-                  variant="featured"
-                  code={true}
-                  bullets={true}
-                  shadow={true}
-                />
-              ))}
-            </Flex>
-            <Flex as="section" direction="column" align="center" gap="48px">
-              <Heading
-                as="h2"
-                fontFamily="josefin"
-                fontSize="42px"
-                color="navyBlue"
-              >
-                Latest Products
-              </Heading>
-              <Flex gap="30px">
-                {products.map((product) => (
-                  <ProductCard
-                    data={product}
-                    variant="latest"
-                    code={false}
-                    bullets={false}
-                    shadow={false}
-                  />
-                ))}
-              </Flex>
-            </Flex>
+      <Flex direction="column" py={{base: '50px', md: '100px'}} gap="60px">
+        <FeaturedSection />
+        <LatestSection />
+        <Heading
+          as="h2"
+          fontFamily="josefin"
+          fontSize={{base: '26px', lg: '42px'}}
+          color="navyBlue"
+          textAlign="center"
+        >
+          What Shopex Offer!
+        </Heading>
+        <Box bg="skyBlue" h={{base: '700px', lg: '579px'}} w="100%">
+          <UniqueFeatures />
+        </Box>
+        <TrendingSection />
+      </Flex>
+
+      {/* 
             <Flex as="section" direction="column" align="center" gap="48px">
               <Heading
                 as="h2"
@@ -71,41 +53,7 @@ export default function Home() {
                 ))}
               </Flex>
             </Flex>
-          </Flex>
-          {/* 
-         
-          <Flex as="section" direction="column" align="center" gap="48px">
-            <Heading
-              as="h2"
-              fontFamily="josefin"
-              fontSize="42px"
-              color="navyBlue"
-            >
-              Top Categories
-            </Heading>
-            <Flex gap="30px">
-              {products.map((product) => (
-                <ProductCard data={product} variant="top" />
-              ))}
-            </Flex>
-          </Flex>
-          <Flex as="section" direction="column" align="center" gap="48px">
-            <Heading
-              as="h2"
-              fontFamily="josefin"
-              fontSize="42px"
-              color="navyBlue"
-            >
-              Grid
-            </Heading>
-            <Flex gap="30px">
-              {products.map((product) => (
-                <ProductCard data={product} variant="grid" />
-              ))}
-            </Flex>
           </Flex> */}
-        </Flex>
-      </Container>
     </>
   );
 }

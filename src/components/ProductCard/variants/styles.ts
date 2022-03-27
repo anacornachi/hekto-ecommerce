@@ -72,9 +72,10 @@ export const styles = (isHover) => ({
       bg: isHover ? 'white' : '#F7F7F7',
     },
     main: {
-      maxW: '360px',
-      minW: '360px',
+      maxW: '370px',
+      minW: {base: '320px', sm: '370px'},
       color: 'navyBlue',
+      px: {base: '15px', sm: 0},
     },
     promotion: {
       color: 'red',

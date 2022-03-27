@@ -1,4 +1,4 @@
-import SubHeader from '@components/SubHeader';
+import SubHeader from '@components/shared/SubHeader';
 
 export default function Blog() {
   return (
