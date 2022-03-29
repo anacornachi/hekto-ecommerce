@@ -15,6 +15,7 @@ const theme = extendTheme({
       800: '#4e000c',
       900: '#200004',
     },
+
     blue: '#2F1AC4',
     offNavyBlue: '#3F509E',
     navyBlue: '#151875',
