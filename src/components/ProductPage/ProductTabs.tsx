@@ -7,11 +7,15 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
+  Td,
   Text,
+  Tr,
 } from '@chakra-ui/react';
 import Container from '@components/layouts/Container';
 import {products} from '@components/ProductCard/mock';
-import {BsArrowRight} from 'react-icons/bs';
+import ListTable from '@components/shared/ListTable';
+import {FaArrowRight} from 'react-icons/fa';
+import {singleProductColumns} from './singleProductColumns';
 
 type Props = {
   product: TProduct;
@@ -60,7 +64,7 @@ export default function ProductTabs({product}: Props) {
 
           <TabPanels>
             <TabPanel py="60px" fontFamily="josefin">
-              <Flex direction="column" gap="30px">
+              <Flex direction="column" gap="36px">
                 <Flex direction="column" gap="15px">
                   <Heading
                     as="h3"
@@ -90,8 +94,10 @@ export default function ProductTabs({product}: Props) {
                     product.details.map((detail, key) => {
                       return (
                         <Flex align="center" key={key}>
-                          <BsArrowRight color="navyBlue" size="30px" />
-                          <Text color="description">{detail}</Text>
+                          <FaArrowRight size="15px" fill="#151875" />
+                          <Text ml="10px" color="description">
+                            {detail}
+                          </Text>
                         </Flex>
                       );
                     })}
@@ -99,7 +105,24 @@ export default function ProductTabs({product}: Props) {
               </Flex>
             </TabPanel>
             <TabPanel>
-              <p>two!</p>
+              <ListTable
+                columns={singleProductColumns}
+                rows={
+                  (product.code,
+                  product.size,
+                  product.color,
+                  product.unity,
+                  product.manufacturer)
+                }
+              >
+                <Tr>
+                  <Td>{product.code}</Td>
+                  <Td>{product.size}</Td>
+                  <Td>{product.color}</Td>
+                  <Td>{product.unity}</Td>
+                  <Td>{product.manufacturer}</Td>
+                </Tr>
+              </ListTable>
             </TabPanel>
             <TabPanel>
               <p>three!</p>

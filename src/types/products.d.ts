@@ -18,4 +18,7 @@ type TProduct = {
   categories?: string[];
   tags?: string[];
   details?: string[];
+  size?: string;
+  unity?: string;
+  manufacturer?: string;
 };
