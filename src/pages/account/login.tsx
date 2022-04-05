@@ -1,4 +1,4 @@
-import SubHeader from '@components/SubHeader';
+import SubHeader from '@components/shared/SubHeader';
 import Login from '@components/Forms/Login';
 
 export default function LoginPage() {

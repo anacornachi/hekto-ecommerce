@@ -1,7 +1,7 @@
 import {Circle, Flex, Heading, Text, useToast} from '@chakra-ui/react';
 import Contact from '@components/Forms/Contact';
 import Container from '@components/layouts/Container';
-import SubHeader from '@components/SubHeader';
+import SubHeader from '@components/shared/SubHeader';
 import React from 'react';
 import contactUs from '@public/images/contact-us.svg';
 import Image from 'next/image';

@@ -1,6 +1,6 @@
 import {Box} from '@chakra-ui/react';
 import Container from '@components/layouts/Container';
-import SubHeader from '@components/SubHeader';
+import SubHeader from '@components/shared/SubHeader';
 import Footer from '@components/Footer/index';
 
 export default function Login() {

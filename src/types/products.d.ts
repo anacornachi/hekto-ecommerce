@@ -9,10 +9,16 @@ type TProduct = {
   main_image?: string | StaticImageData;
   price?: number;
   promotion?: number;
-  rate?: number;
+  rate?: number[];
   slug?: string;
   stock?: number;
   title?: string;
   url?: string;
   variant?: string;
+  categories?: string[];
+  tags?: string[];
+  details?: string[];
+  size?: string;
+  unity?: string;
+  manufacturer?: string;
 };

@@ -1,4 +1,4 @@
-import SubHeader from '@components/SubHeader';
+import SubHeader from '@components/shared/SubHeader';
 import {useRouter} from 'next/router';
 
 export default function ShopLeftSide() {

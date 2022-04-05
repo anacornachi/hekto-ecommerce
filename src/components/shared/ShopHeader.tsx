@@ -10,11 +10,11 @@ export type Props = {
 export default function ShopHeader({value, time}: Props) {
   return (
     <Flex
-      direction={{base: 'column', lg: 'row'}}
+      direction={{base: 'column', xl: 'row'}}
       w="100%"
-      gap={{base: '30px', md: '30px', lg: '0'}}
+      gap={{base: '30px', md: '30px'}}
     >
-      <Flex w={{base: '100%', lg: '50%'}} direction="column" as="section">
+      <Flex w={{base: '100%', xl: '50%'}} direction="column">
         <Heading as="h1" fontFamily="josefin" color="navyBlue" fontSize="22px">
           Ecommerce Accessories & Fashion Items
         </Heading>
@@ -23,15 +23,14 @@ export default function ShopHeader({value, time}: Props) {
         </Text>
       </Flex>
       <Flex
-        as="section"
         gap={{base: '20px', md: '30px'}}
-        w={{base: '100%', lg: '50%'}}
+        w={{base: '100%', xl: '50%'}}
         justify={{base: 'start', md: 'end'}}
         direction={{base: 'column', md: 'row'}}
       >
         <Flex align="center" w={{base: '100%', lg: '33%'}}>
           <label
-            style={{fontSize: '16px', color: '#151875', width: '30%'}}
+            style={{fontSize: '16px', color: '#151875', width: '40%'}}
             id="view-per-page"
           >
             Per Page:
@@ -48,12 +47,12 @@ export default function ShopHeader({value, time}: Props) {
             placeholder="12"
             textAlign="center"
             type="number"
-            w="70%"
+            w="60%"
           />
         </Flex>
-        <Flex align="center" w="100%">
+        <Flex align="center" w={{base: '100%', lg: '33%'}}>
           <label
-            style={{fontSize: '16px', color: '#151875', width: '30%'}}
+            style={{fontSize: '16px', color: '#151875', width: '40%'}}
             id="sort-page"
           >
             Sort by:
@@ -65,8 +64,8 @@ export default function ShopHeader({value, time}: Props) {
             h="25px"
             id="sort-page"
             ml="8px"
-            w="70%"
-            maxW={{base: '100%', md: '120px'}}
+            w="60%"
+            maxW="120px"
           >
             <option value="best-match" selected>
               Best match
@@ -77,8 +76,8 @@ export default function ShopHeader({value, time}: Props) {
             <option value="bigger-discounts">Bigger Discounts</option>
           </Select>
         </Flex>
-        <Flex w="100%">
-          <Flex align="center" gap="5px" w="30%">
+        <Flex w={{base: '100%', lg: '33%'}} align="center">
+          <Flex align="center" gap="5px" w="40%">
             <label style={{fontSize: '16px', color: '#151875'}} id="view-way">
               View:
             </label>
@@ -95,7 +94,7 @@ export default function ShopHeader({value, time}: Props) {
             maxW="200px"
             min="0"
             ml="8px"
-            w="70%"
+            w="60%"
           />
         </Flex>
       </Flex>

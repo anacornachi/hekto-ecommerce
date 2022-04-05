@@ -10,13 +10,14 @@ import {
   InputRightElement,
   useMediaQuery,
 } from '@chakra-ui/react';
-import Container from '@components/layouts/Container';
+
 import {FiMail, FiPhoneCall, FiHeart} from 'react-icons/fi';
 import {BiUser} from 'react-icons/bi';
 import {BsCart2} from 'react-icons/bs';
 import {useRouter} from 'next/router';
 import {useSession} from 'next-auth/react';
 import {FiChevronDown} from 'react-icons/fi';
+import Container from '@components/layouts/Container';
 
 export default function TopHeader() {
   const [isLargerThan400px] = useMediaQuery('(min-width: 400px)');
